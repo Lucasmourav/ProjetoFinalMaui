@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoFinalMaui.Views.HistoricoPage"
+             Title="Histórico de Consultas">
+    <VerticalStackLayout Spacing="20" Padding="20">
+        <HorizontalStackLayout Spacing="10">
+            <Label Text="De:"
+                   VerticalOptions="Center"/>
+            <DatePicker x:Name="DataInicioPicker"
+                       Date="{Binding DataInicio}"
+                       VerticalOptions="Center"/>
+            
+            <Label Text="Até:"
+                   VerticalOptions="Center"/>
+            <DatePicker x:Name="DataFimPicker"
+                       Date="{Binding DataFim}"
+                       VerticalOptions="Center"/>
+            
+            <Button Text="Filtrar"
+                    Clicked="OnFiltrarClicked"
+                    VerticalOptions="Center"/>
+        </HorizontalStackLayout>
+
+        <CollectionView x:Name="HistoricoCollectionView"
+                       EmptyView="Nenhuma consulta encontrada">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,5" Padding="10">
+                        <Grid ColumnDefinitions="Auto,*,Auto">
+                            <VerticalStackLayout Grid.Column="0">
+                                <Label Text="{Binding Cidade}"
+                                       FontSize="18"
+                                       FontAttributes="Bold"/>
+                                <Label Text="{Binding DataConsulta, StringFormat='{0:dd/MM/yyyy HH:mm}'}"
+                                       FontSize="12"
+                                       TextColor="Gray"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1"
+                                               HorizontalOptions="End">
+                                <Label Text="{Binding Temperatura, StringFormat='{0:F1}°C'}"
+                                       FontSize="20"/>
+                                <Label Text="{Binding Condicao}"
+                                       FontSize="14"/>
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

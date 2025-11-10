@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "jKaFhsG9ex0=",
+  "success": false,
+  "projectFilePath": "/home/lucasmouraventura/Área de trabalho/DesenDispoMoveis2/ProjetoFinalMaui/ProjetoFinalMaui/ProjetoFinalMaui.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1012",
+      "level": "Error",
+      "message": "Platform version is not present for one or more target frameworks, even though they have specified a platform: net8.0-ios, net8.0-maccatalyst"
+    }
+  ]
+}
