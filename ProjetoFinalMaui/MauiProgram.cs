@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
+using SQLitePCL;
 
 namespace ProjetoFinalMaui;
 
@@ -7,6 +8,7 @@ public static class MauiProgram
 	public static MauiApp CreateMauiApp()
 	{
 		var builder = MauiApp.CreateBuilder();
+		Batteries_V2.Init();
 		builder
 			.UseMauiApp<App>()
 			.ConfigureFonts(fonts =>

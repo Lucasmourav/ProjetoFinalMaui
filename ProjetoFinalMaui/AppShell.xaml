@@ -20,12 +20,12 @@
         </Grid>
     </Shell.FlyoutHeader>
 
-    <FlyoutItem Title="Previsão do Tempo" Icon="weather">
+    <FlyoutItem Title="Previsão do Tempo">
         <ShellContent
             ContentTemplate="{DataTemplate views:WeatherPage}"/>
     </FlyoutItem>
 
-    <FlyoutItem Title="Histórico" Icon="history">
+    <FlyoutItem Title="Histórico">
         <ShellContent
             ContentTemplate="{DataTemplate views:HistoricoPage}"/>
     </FlyoutItem>

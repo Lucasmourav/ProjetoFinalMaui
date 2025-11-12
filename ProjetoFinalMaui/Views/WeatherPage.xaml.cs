@@ -20,6 +20,12 @@ public partial class WeatherPage : ContentPage
 
     private async void OnConsultarClicked(object sender, EventArgs e)
     {
+        if (string.IsNullOrWhiteSpace(_apiKey) || _apiKey.Contains("SUA_CHAVE_API_AQUI", StringComparison.OrdinalIgnoreCase))
+        {
+            await DisplayAlert("Configuração necessária", "Defina sua chave da API OpenWeatherMap em WeatherPage.xaml.cs (variável _apiKey) antes de consultar.", "OK");
+            return;
+        }
+
         if (string.IsNullOrWhiteSpace(CidadeEntry.Text))
         {
             MessageLabel.Text = "Por favor, digite o nome da cidade";

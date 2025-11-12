@@ -1,5 +1,7 @@
 using SQLite;
 using ProjetoFinalMaui.Models;
+using System.IO;
+using Microsoft.Maui.Storage;
 
 namespace ProjetoFinalMaui.Services
 {
