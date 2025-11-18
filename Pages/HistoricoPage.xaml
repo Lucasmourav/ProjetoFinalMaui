@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoFinalMauiReal.Pages.HistoricoPage"
+             Title="Histórico">
+    <VerticalStackLayout Padding="16" Spacing="12">
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
+            <VerticalStackLayout Grid.Column="0">
+                <Label Text="Início"/>
+                <DatePicker Date="{Binding Inicio}"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1">
+                <Label Text="Fim"/>
+                <DatePicker Date="{Binding Fim}"/>
+            </VerticalStackLayout>
+        </Grid>
+        <Button Text="Filtrar" Command="{Binding CarregarCommand}"/>
+        <CollectionView ItemsSource="{Binding Itens}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="8" Margin="0,4" BorderColor="LightGray">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Cidade}" FontAttributes="Bold"/>
+                            <Label Text="{Binding ResultadoResumo}"/>
+                            <Label Text="{Binding DataConsultaLocal}" FontSize="12"/>
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

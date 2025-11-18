@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoFinalMauiReal.Pages.CadastroPage"
+             Title="Cadastro">
+    <ScrollView>
+        <VerticalStackLayout Padding="16" Spacing="12">
+            <Label Text="Nome"/>
+            <Entry Text="{Binding Nome}" Placeholder="Seu nome"/>
+
+            <Label Text="Data de nascimento"/>
+            <DatePicker Date="{Binding DataNascimento}"/>
+
+            <Label Text="Email"/>
+            <Entry Text="{Binding Email}" Keyboard="Email" Placeholder="seu@email.com"/>
+
+            <Label Text="Senha"/>
+            <Entry Text="{Binding Senha}" IsPassword="True" Placeholder="mínimo 6 caracteres"/>
+
+            <Button Text="Cadastrar" Command="{Binding CadastrarCommand}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
